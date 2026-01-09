@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K Madhunisha | CCE Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Navigation (Hidden on Hero, visible/sticky on other sections? 
+         Request says "Add clean navigation buttons (pill-style)" on Hero. 
+         Usually, after leaving Hero, you need a way to get back or nav elsewhere. 
+         Let's put a sticky nav or keep it simple as requested: "Clicking a button should... Smoothly reveal only that section".
+         Maybe we include a "Home" or "Back" button in inner sections, or a persistent diverse nav. 
+         Let's stick to the Hero Nav for now, and maybe add a 'Back to Home' on other sections.
+    -->
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="section active">
+            <div class="container hero-container"
+                style="display: flex; align-items: center; justify-content: center; gap: 4rem; min-height: 100vh;">
+                <!-- Image on the side (left) -->
+                <div class="hero-image-wrapper">
+                    <img src="./profile.jpg" alt="K Madhunisha" class="profile-photo">
+                </div>
+
+                <!-- Text Content -->
+                <div class="hero-text" style="text-align: left; max-width: 600px;">
+                    <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1.2;">K Madhunisha</h1>
+                    <h2 style="font-size: 1.5rem; color: var(--accent-color); font-weight: 500; margin-bottom: 1.5rem;">
+                        Computer & Communication Engineering Student<br>
+                        <span style="font-size: 0.8em; opacity: 0.8; font-weight: 400;">Machine Learning |
+                            Communication Systems |
+                            Full Stack Web Development</span>
+                    </h2>
+
+                    <p style="margin-bottom: 2.5rem; font-size: 1.15rem; line-height: 1.8;">
+                        Passionate about building real-world engineering systems that combine hardware, signal
+                        processing,
+                        and intelligent software.
+                    </p>
+
+                    <nav class="hero-nav"
+                        style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;">
+                        <button class="btn" onclick="navigateTo('resume')">Resume</button>
+                        <button class="btn" onclick="navigateTo('projects')">Projects</button>
+                        <button class="btn" onclick="navigateTo('skills')">Skills</button>
+                        <button class="btn" onclick="navigateTo('experience')">Experience</button>
+                        <button class="btn" onclick="navigateTo('education')">Education</button>
+                        <button class="btn" onclick="navigateTo('contact')">Contact</button>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESUME SECTION -->
+        <section id="resume" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Resume</h2>
+                    <button class="btn" onclick="navigateTo('hero')">Back to Home</button>
+                </div>
+
+                <div class="card" style="text-align: center; height: 80vh; display: flex; flex-direction: column;">
+                    <div style="margin-bottom: 1rem; text-align: right;">
+                        <a href="./resume.pdf" download class="btn btn-primary"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                            Download Resume 📥
+                        </a>
+                    </div>
+                    <iframe src="./resume.pdf" style="width: 100%; height: 100%; border: none; border-radius: 4px;"
+                        title="Resume Preview">
+                        <p>Your browser does not support PDFs. <a href="./resume.pdf">Download the PDF</a> to view it.
+                        </p>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Projects</h2>
+                    <button class="btn" onclick="navigateTo('hero')">Back to Home</button>
+                </div>
+
+                <div id="projects-list" class="grid-projects"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                    <!-- Projects will be injected here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAIL SECTION -->
+        <section id="project-detail" class="section">
+            <div class="container">
+                <!-- Content will be injected here via JavaScript -->
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Technical Skills</h2>
+                    <button class="btn" onclick="navigateTo('hero')">Back to Home</button>
+                </div>
+
+                <div class="grid-skills"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">IoT</h3>
+                        <ul style="list-style: none; margin-top: 1rem;">
+                            <li>Arduino, ESP-class boards</li>
+                            <li>Load Cell, RFID, Sensors</li>
+                            <li>I2C, SPI, UART Protocols</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">Communication Systems</h3>
+                        <ul style="list-style: none; margin-top: 1rem;">
+                            <li>Time & frequency analysis</li>
+                            <li>Digital modulation (BPSK, QPSK)</li>
+                            <li>Channel modeling & Filtering</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">Machine Learning</h3>
+                        <ul style="list-style: none; margin-top: 1rem;">
+                            <li>Biomedical signal analysis </li>
+                            <li>Classification models</li>
+                            <li>Data preprocessing & Feature Engineering</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">Programming & Tools</h3>
+                        <ul style="list-style: none; margin-top: 1rem;">
+                            <li>Python</li>
+                            <li>Git, VS Code, Jupyter Notebooks,Spyder </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">Web Development</h3>
+                        <ul style="list-style: none; margin-top: 1rem;">
+                            <li>HTML, CSS</li>
+                            <li>JavaScript</li>
+                            <li>Vite, Git</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Experience</h2>
+                    <button class="btn" onclick="navigateTo('hero')">Back to Home</button>
+                </div>
+
+                <div style="display: grid; gap: var(--spacing-lg);">
+                    <!-- Internship 1 -->
+                    <div class="card">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                            <div>
+                                <h3 style="color: var(--accent-color); margin-bottom: 0.2rem;">Vaishnav Technologies
+                                </h3>
+                                <h4 style="font-weight: 500;">Web Development Intern</h4>
+                            </div>
+                            <div style="text-align: right;">
+                                <span
+                                    style="background: var(--bg-color); padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">Remote
+                                    | 1 Month</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1rem;">
+                            <p><strong>Objective:</strong> Web Development</p>
+                            <p style="margin-top: 0.5rem;">Developed and optimized front-end components using HTML, CSS,
+                                and JS. Contributed to backend integration using MySQL and assisted in building
+                                responsive user interfaces.</p>
+
+                            <div
+                                style="margin-top: 1rem; background: var(--bg-color); padding: 1rem; border-radius: var(--radius-sm);">
+                                <p style="margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Key
+                                    Accomplishments & Results:</p>
+                                <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                                    <li style="margin-bottom: 0.3rem;">Built and styled responsive pages using HTML,
+                                        CSS, and JavaScript as part of a live web project.</li>
+                                    <li>Integrated basic MySQL database operations to support dynamic data retrieval.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 1rem; text-align: right;">
+                                <a href="./internship_certificate__web.pdf" target="_blank" class="btn"
+                                    style="font-size: 0.9rem; padding: 0.5rem 1rem;">View
+                                    Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internship 2 (Duplicate as requested) -->
+                    <div class="card">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                            <div>
+                                <h3 style="color: var(--accent-color); margin-bottom: 0.2rem;">Emertxe
+                                </h3>
+                                <h4 style="font-weight: 500;">Intern</h4>
+                            </div>
+                            <div style="text-align: right;">
+                                <span
+                                    style="background: var(--bg-color); padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">Remote
+                                    | 2 Month</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1rem;">
+                            <p><strong>Objective:</strong> Internet of Things (IoT)</p>
+
+                            <p style="margin-top: 0.5rem;">
+                                Completed a structured internship focused on Internet of Things (IoT),
+                                gaining hands-on experience in C programming, microcontrollers, and
+                                SDLC-based IoT project development.
+                            </p>
+
+                            <div
+                                style="margin-top: 1rem; background: var(--bg-color); padding: 1rem; border-radius: var(--radius-sm);">
+                                <p style="margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">
+                                    Key Accomplishments & Results:
+                                </p>
+                                <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                                    <li style="margin-bottom: 0.3rem;">
+                                        Developed foundational programs in C for embedded and IoT applications.
+                                    </li>
+                                    <li style="margin-bottom: 0.3rem;">
+                                        Worked with microcontroller-based systems to understand real-world IoT
+                                        workflows.
+                                    </li>
+                                    <li>
+                                        Applied SDLC principles for structured design and implementation of IoT
+                                        projects.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div style="margin-top: 1rem; text-align: right;">
+                            <a href="./internship_certificate__eme.pdf" target="_blank" class="btn"
+                                style="font-size: 0.9rem; padding: 0.5rem 1rem;">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Education</h2>
+                    <button class="btn" onclick="navigateTo('hero')">Back to Home</button>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <!-- UG -->
+                    <div class="card clickable" onclick="navigateTo('achievements-ug')"
+                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem;">Undergraduate (UG)</h3>
+                                <p style="font-weight: 500; margin-bottom: 0.5rem;">Computer
+                                    & Communication Engineering</p>
+                                <p style="margin-bottom: 0;">Amrita Vishwa Vidyapeetham, Coimbatore</p>
+                                <p style="font-size: 0.85rem; color: var(--accent-color); margin-top: 0.5rem;">Click to
+                                    view Activities & Achievements →</p>
+                            </div>
+                            <div style="text-align: right; min-width: 120px;">
+                                <p style="margin-bottom: 0.2rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                    Passing Year</p>
+                                <p style="font-weight: 600; margin-bottom: 0.5rem;">2027</p>
+                                <div
+                                    style="background: var(--bg-color); padding: 0.3rem 0.8rem; border-radius: 4px; display: inline-block;">
+                                    <span style="font-weight: 600; color: var(--accent-color);">7.3 / 10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- +2 -->
+                    <div class="card clickable" onclick="navigateTo('achievements-hsc')"
+                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem;">Higher Secondary (+2)</h3>
+                                <p style="margin-bottom: 0;">National Public School, Namakkal</p>
+                                <p style="font-size: 0.85rem; color: var(--accent-color); margin-top: 0.5rem;">Click to
+                                    view Activities & Achievements →</p>
+                            </div>
+                            <div style="text-align: right; min-width: 120px;">
+                                <p style="margin-bottom: 0.2rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                    Passing Year</p>
+                                <p style="font-weight: 600; margin-bottom: 0.5rem;">2023</p>
+                                <div
+                                    style="background: var(--bg-color); padding: 0.3rem 0.8rem; border-radius: 4px; display: inline-block;">
+                                    <span style="font-weight: 600; color: var(--accent-color);">77%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10th -->
+                    <div class="card clickable" onclick="navigateTo('achievements-ssc')"
+                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem;">Secondary (10th)</h3>
+                                <p style="margin-bottom: 0;">Kailash School Of Excellence, Namakkal</p>
+                                <p style="font-size: 0.85rem; color: var(--accent-color); margin-top: 0.5rem;">Click to
+                                    view Activities & Achievements →</p>
+                            </div>
+                            <div style="text-align: right; min-width: 120px;">
+                                <p style="margin-bottom: 0.2rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                    Passing Year</p>
+                                <p style="font-weight: 600; margin-bottom: 0.5rem;">2021</p>
+                                <div
+                                    style="background: var(--bg-color); padding: 0.3rem 0.8rem; border-radius: 4px; display: inline-block;">
+                                    <span style="font-weight: 600; color: var(--accent-color);">75.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ACHIEVEMENTS SECTIONS -->
+        <!-- UG Achievements -->
+        <section id="achievements-ug" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Activities & Achievements (UG)</h2>
+                    <button class="btn" onclick="navigateTo('education')">Back to Education</button>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">🏆 Hackathons & Competitions</h3>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.5rem;"><strong>Smart India Hackathon SIH2025</strong> -
+                                Internal Qualifier: Shortlisted at institute level after problem statement evaluation
+                                and internal screening.</li>
+
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">🎤 Public Speaking & Events</h3>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li><strong>Master of Ceremonies (MC)</strong> for major college events such as Gokulashtami
+                                and Shivaratri celebrations.</li>
+                            <li>Demonstrated confidence, stage presence, and excellent communication skills.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">🤝 Volunteering & Social Service</h3>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li><strong>NSS Lead Student Coordinator & Volunteer</strong> - Active participant in the
+                                National
+                                Service Scheme.</li>
+                            <li>Engaged in social outreach programs, cleanliness drives, and awareness campaigns.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;"></h3>
+
+                <div class="card">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                        <div>
+                            <h3 style="color: var(--accent-color); margin-bottom: 0.2rem;">🐾 Amrita Animal Welfare Club
+                            </h3>
+                            <h4 style="font-weight: 500;">Student Leader</h4>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1rem;">
+                        <p>I served as a student leader responsible for coordinating animal welfare initiatives on
+                            campus, managing volunteers, and supporting awareness, rescue, and welfare activities.</p>
+
+                        <div
+                            style="margin-top: 1rem; background: var(--bg-color); padding: 1rem; border-radius: var(--radius-sm);">
+                            <p style="margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Leadership
+                                Responsibilities & Impact:</p>
+                            <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                                <li style="margin-bottom: 0.3rem;">Led a team of student volunteers to execute animal
+                                    welfare initiatives and rescue operations.</li>
+                                <li style="margin-bottom: 0.3rem;">Coordinated campus-wide awareness drives and welfare
+                                    activities.</li>
+                                <li>Facilitated effective communication between volunteers and faculty advisors to
+                                    ensure smooth operations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HSC Achievements -->
+        <section id="achievements-hsc" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Activities & Achievements (+2)</h2>
+                    <button class="btn" onclick="navigateTo('education')">Back to Education</button>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+
+
+
+                    <div class="card">
+                        <h3 style="color: var(--accent-color);">Sports & Physical Achievements</h3>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.5rem;"><strong>ShotPut Competition</strong> Winner</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>ThrowBall Competition</strong> Winner</li>
+                            <li style="margin-bottom: 0.5rem;">Won first place in Shot Put and Throwball competitions,
+                                demonstrating strong athletic ability, discipline, and teamwork. Winner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SSC Achievements -->
+        <section id="achievements-ssc" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Activities & Achievements (10th)</h2>
+                    <button class="btn" onclick="navigateTo('education')">Back to Education</button>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--accent-color);">🏃 Sports & Arts</h3>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-secondary);">
+
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong>Shot Put</strong> – 3rd Prize (Grade 3);
+                            1st Prize (Grades 6, 7, and 8).
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong>Basketball</strong> – Winner, District Level Match (Grade 7).
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2>Contact</h2>
+                    <button class="btn" onclick="navigateTo('hero')">Back to Home</button>
+                </div>
+
+                <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <p>Feel free to reach out for collaborations or opportunities.</p>
+
+                    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                        <a href="mailto:madhu.nisha.for.work@gmail.com" class="btn">Email</a>
+                        <a href="https://github.com/madhunishaforwork-dev" target="_blank" class="btn">GitHub</a>
+                        <a href="https://www.linkedin.com/in/madhunisha-kathirvel-488929349/" target="_blank"
+                            class="btn">LinkedIn</a>
+                    </div>
+
+                    <div style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                        <p style="font-size: 0.9rem;">&copy; 2025 K Madhunisha</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

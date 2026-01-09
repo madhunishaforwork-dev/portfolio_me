@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors - Deep Professional Purple Theme */
+  --bg-color: #f6f0ff;
+  /* Light lavender-white */
+  --surface-color: #ffffff;
+  --text-primary: #1e1b2e;
+  --text-secondary: #5d5b75;
+  --accent-color: #7b2cbf;
+  /* Strong professional purple */
+  --accent-hover: #5a189a;
+  --border-color: #e9e5f5;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+
+  /* Transitions */
+  --transition-speed: 0.4s;
+  --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+  min-height: 100vh;
+  /* Fallback */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(30px);
+  /* Larger slide for better effect */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* We want the body to not scroll unless the content is long. */
+/* Actually, for a pure "app-like" feel, we might want to hide the body scrollbar and make the section scrollable if needed. */
+/* But standard website behavior is safer: content fills page. 
+   If we use absolute positioning for all sections, they stack. 
+   When one is active, it's z-index high or just visible. 
+   If it's taller than viewport, body scrolls. */
+
+.section.active {
+  position: relative;
+  /* This allows normal document flow for the active section */
+}
+
+/* When hidden, it's absolute to not take up space */
+.section:not(.active) {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  color: white;
+}
+
+/* Card Styles */
+.card {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* Subtle border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Profile Photo */
+.profile-photo {
+  width: 350px;
+  /* Decreased from 380px */
+  height: 350px;
+  border-radius: 50%;
+  /* Circular */
+  object-fit: cover;
+  border: 6px solid var(--accent-color);
+  /* Thicker border */
+  box-shadow: var(--shadow-md);
+  margin-bottom: 0;
+  /* Align with flex gap instead */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-hover);
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 2rem !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-text {
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  .hero-nav {
+    justify-content: center !important;
+  }
+
+  .profile-photo {
+    width: 250px;
+    height: 350px;
+  }
+}
