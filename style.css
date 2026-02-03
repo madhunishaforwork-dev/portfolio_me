@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Colors - Deep Professional Purple Theme */
-  --bg-color: #f6f0ff;
-  /* Light lavender-white */
-  --surface-color: #ffffff;
-  --text-primary: #1e1b2e;
-  --text-secondary: #5d5b75;
-  --accent-color: #7b2cbf;
-  /* Strong professional purple */
-  --accent-hover: #5a189a;
-  --border-color: #e9e5f5;
+  /* Colors - Light Purple Theme */
+  --bg-color: #f5f0ff;
+  /* Soft Lavender Background */
+  --surface-color: rgba(255, 255, 255, 0.85);
+  /* Glassmorphism surface */
+  --text-primary: #2d1b4e;
+  --text-secondary: #6b5b8c;
+  --accent-color: #8b5cf6;
+  /* Vibrant Purple */
+  --accent-secondary: #a78bfa;
+  /* Lighter Purple */
+  --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  --border-color: rgba(139, 92, 246, 0.15);
+  --glass-border: rgba(139, 92, 246, 0.1);
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -20,18 +24,19 @@
   --spacing-xl: 4rem;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 8px rgba(139, 92, 246, 0.08);
+  --shadow-md: 0 8px 20px rgba(139, 92, 246, 0.15);
+  --shadow-lg: 0 20px 40px rgba(139, 92, 246, 0.2);
 
   /* Border Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-pill: 50px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-pill: 100px;
 
   /* Transitions */
-  --transition-speed: 0.4s;
-  --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-speed: 0.5s;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -48,6 +53,40 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Mesh Gradient Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+  animation: meshMove 20s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes meshMove {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
 }
 
 /* Typography */
@@ -57,15 +96,30 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: 'Outfit', sans-serif;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
 }
 
 p {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-sm);
+  font-size: 1.05rem;
 }
 
 /* Utilities */
@@ -78,16 +132,14 @@ p {
 .section {
   padding: var(--spacing-xl) 0;
   min-height: 100vh;
-  /* Fallback */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  transform: translateY(30px);
-  /* Larger slide for better effect */
+  transform: translateY(40px);
   pointer-events: none;
   z-index: 0;
 }
@@ -99,18 +151,23 @@ p {
   pointer-events: auto;
   position: relative;
   z-index: 10;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-/* We want the body to not scroll unless the content is long. */
-/* Actually, for a pure "app-like" feel, we might want to hide the body scrollbar and make the section scrollable if needed. */
-/* But standard website behavior is safer: content fills page. 
-   If we use absolute positioning for all sections, they stack. 
-   When one is active, it's z-index high or just visible. 
-   If it's taller than viewport, body scrolls. */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .section.active {
   position: relative;
-  /* This allows normal document flow for the active section */
 }
 
 /* When hidden, it's absolute to not take up space */
@@ -120,74 +177,180 @@ p {
   overflow: hidden;
 }
 
+/* Scroll Reveal Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--surface-color);
+  padding: 0.9rem 2rem;
+  background: var(--surface-color);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition-speed) var(--transition-ease);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn:hover {
   border-color: var(--accent-color);
   color: var(--accent-color);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-primary {
-  background-color: var(--accent-color);
+  background: var(--accent-gradient);
   color: white;
   border: none;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
   color: white;
 }
 
-/* Card Styles */
+/* Card Styles - Glassmorphism */
 .card {
   background: var(--surface-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  /* Subtle border */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--glass-border);
+  transition: all var(--transition-speed) var(--transition-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-speed) var(--transition-ease);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* Profile Photo */
 .profile-photo {
   width: 350px;
-  /* Decreased from 380px */
   height: 350px;
   border-radius: 50%;
-  /* Circular */
   object-fit: cover;
-  border: 6px solid var(--accent-color);
-  /* Thicker border */
-  box-shadow: var(--shadow-md);
+  border: 4px solid transparent;
+  background: var(--accent-gradient);
+  padding: 4px;
+  box-shadow:
+    var(--shadow-md),
+    0 0 40px rgba(139, 92, 246, 0.25);
   margin-bottom: 0;
-  /* Align with flex gap instead */
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: all var(--transition-speed) var(--transition-ease);
 }
 
 .profile-photo:hover {
-  transform: scale(1.05);
-  border-color: var(--accent-hover);
+  transform: scale(1.05) rotate(2deg);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 60px rgba(139, 92, 246, 0.4);
+}
+
+/* Hero Section Specific Styles */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  min-height: 100vh;
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  background: none;
+  -webkit-text-fill-color: var(--accent-color);
+}
+
+.hero-tags {
+  font-size: 0.8em;
+  opacity: 0.8;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.hero-description {
+  margin-bottom: 2.5rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 /* Responsive Design for Hero */

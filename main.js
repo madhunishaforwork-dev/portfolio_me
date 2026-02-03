@@ -195,9 +195,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Handle initial URL
   handleRoute();
+
+  // Initialize scroll reveal animations
+  initScrollReveal();
 });
 
 // Expose legacy navigateTo for backward compatibility if buttons still use it
 window.navigateTo = function (id) {
   window.location.hash = id;
+}
+
+// Scroll Reveal Animation
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.card, .hero-text, .hero-image-wrapper');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, index * 100);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.8s ease-out';
+    revealObserver.observe(el);
+  });
 }

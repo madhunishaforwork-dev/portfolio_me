@@ -5,6 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>K Madhunisha | CCE Portfolio</title>
+    <meta name="description"
+        content="Portfolio showcasing Computer & Communication Engineering projects, skills, and experience by K Madhunisha" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8b5cf6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="KM Portfolio" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
     <link rel="stylesheet" href="./style.css" />
 </head>
 
@@ -20,31 +37,28 @@
     <main>
         <!-- HERO SECTION -->
         <section id="hero" class="section active">
-            <div class="container hero-container"
-                style="display: flex; align-items: center; justify-content: center; gap: 4rem; min-height: 100vh;">
+            <div class="container hero-container">
                 <!-- Image on the side (left) -->
                 <div class="hero-image-wrapper">
                     <img src="./profile.jpg" alt="K Madhunisha" class="profile-photo">
                 </div>
 
                 <!-- Text Content -->
-                <div class="hero-text" style="text-align: left; max-width: 600px;">
-                    <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1.2;">K Madhunisha</h1>
-                    <h2 style="font-size: 1.5rem; color: var(--accent-color); font-weight: 500; margin-bottom: 1.5rem;">
-                        Computer & Communication Engineering Student<br>
-                        <span style="font-size: 0.8em; opacity: 0.8; font-weight: 400;">Machine Learning |
-                            Communication Systems |
-                            Full Stack Web Development</span>
+                <div class="hero-text">
+                    <h1>K Madhunisha</h1>
+                    <h2 class="hero-subtitle">
+                        Computer & Communication Engineering Student
+                        <span class="hero-tags">Machine Learning | Communication Systems | Full Stack Web
+                            Development</span>
                     </h2>
 
-                    <p style="margin-bottom: 2.5rem; font-size: 1.15rem; line-height: 1.8;">
+                    <p class="hero-description">
                         Passionate about building real-world engineering systems that combine hardware, signal
                         processing,
                         and intelligent software.
                     </p>
 
-                    <nav class="hero-nav"
-                        style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;">
+                    <nav class="hero-nav">
                         <button class="btn" onclick="navigateTo('resume')">Resume</button>
                         <button class="btn" onclick="navigateTo('projects')">Projects</button>
                         <button class="btn" onclick="navigateTo('skills')">Skills</button>
@@ -127,7 +141,9 @@
                     <div class="card">
                         <h3 style="color: var(--accent-color);">Communication Systems</h3>
                         <ul style="list-style: none; margin-top: 1rem;">
+                            <li>Software Defined Radio(SDR)</li>
                             <li>Time & frequency analysis</li>
+
                             <li>Digital modulation (BPSK, QPSK)</li>
                             <li>Channel modeling & Filtering</li>
                         </ul>
@@ -519,6 +535,21 @@
 
     </main>
     <script type="module" src="/main.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('✅ Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('❌ Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>
