@@ -122,7 +122,9 @@ function renderProjects() {
 
   container.innerHTML = Object.entries(projectsData).map(([id, project]) => `
         <div class="card">
-            <h3 style="margin-bottom: 0.5rem;">${project.title}</h3>
+            <a href="#projects/${id}" style="text-decoration: none; color: inherit;">
+                <h3 style="margin-bottom: 0.5rem; cursor: pointer;">${project.title}</h3>
+            </a>
             <p class="tag" style="font-size: 0.85rem; color: var(--accent-color); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;">
                 ${project.tags[0]}
             </p>
