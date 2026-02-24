@@ -1,12 +1,12 @@
 const CACHE_NAME = 'km-portfolio-v1';
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/main.js',
-    '/profile.jpg',
-    '/resume.pdf',
-    '/manifest.json'
+    './',
+    'index.html',
+    'style.css',
+    'main.js',
+    'profile.jpeg',
+    'resume.pdf',
+    'manifest.json'
 ];
 
 // Install event - cache assets
@@ -16,7 +16,12 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('[Service Worker] Caching assets');
-                return cache.addAll(ASSETS_TO_CACHE);
+                // Use a map to handle potential 404s during development
+                return Promise.all(
+                    ASSETS_TO_CACHE.map(url => {
+                        return cache.add(url).catch(err => console.warn(`[SW] Could not cache: ${url}`, err));
+                    })
+                );
             })
             .then(() => self.skipWaiting())
     );
@@ -69,7 +74,7 @@ self.addEventListener('fetch', (event) => {
                     return response;
                 }).catch(() => {
                     // Offline fallback
-                    return caches.match('/index.html');
+                    return caches.match('index.html');
                 });
             })
     );
