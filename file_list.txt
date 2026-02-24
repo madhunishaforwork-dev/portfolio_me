@@ -1,0 +1,9 @@
+icons
+internship_certificate__eme.pdf
+internship_certificate__web.pdf
+manifest.json
+profile.jpeg
+profile.jpg
+resume.pdf
+sw.js
+vite.svg
