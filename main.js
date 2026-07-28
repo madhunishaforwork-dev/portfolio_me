@@ -13,16 +13,7 @@ const projectsData = {
     outcome: "Significantly reduced reading time and enhanced help comprehension through interactive content querying.",
     liveUrl: "https://aibookanalyzer-q48y7sj3pyvgcbpc8ug28j.streamlit.app/"
   },
-  "ai-mock-interviewer": {
-    title: "AI Mock Interviewer",
-    summary: "AI-based interview simulation platform with domain-specific and resume-based interviews.",
-    tags: ["Artificial Intelligence"],
-    overview: "A simulation platform that conducts domain-specific and resume-based mock interviews using AI.",
-    problem: "Students and job seekers often lack accessible, personalized, and realistic practice environments for technical interviews.",
-    approach: "Developed an interactive system where an AI agent dynamically generates questions based on uploaded resumes and selected domains, analyzing user responses for constructive feedback.",
-    technologies: "Artificial Intelligence, Natural Language Processing, Web Development",
-    outcome: "Provided a realistic and accessible practice environment, helping users improve their interview confidence and performance."
-  },
+  
   "mental-health-support": {
     title: "Mental Health Support Application",
     summary: "AI-assisted application providing stress assessment and personalized mental well-being guidance.",
@@ -34,16 +25,7 @@ const projectsData = {
     outcome: "Offered an accessible, private tool for monitoring mental well-being and practicing stress management techniques.",
     liveUrl: "https://mental-health-app-6zjf.onrender.com"
   },
-  "ecg-arrhythmia-detection": {
-    title: "ECG Arrhythmia Detection Using Machine Learning",
-    summary: "ML-based classification of ECG signals for detecting cardiac arrhythmias.",
-    tags: ["Machine Learning"],
-    overview: "A machine learning system for the classification of ECG signals to detect cardiac arrhythmias.",
-    problem: "Manual interpretation of ECG signals is time-consuming, prone to human error, and requires specialized expert knowledge.",
-    approach: "Preprocessed raw ECG signal data (denoising, normalization) and trained a machine learning classifier (e.g., CNN) to accurately identify arrhythmia patterns from normal heartbeats.",
-    technologies: "Machine Learning, Python, Signal Processing, Deep Learning",
-    outcome: "Automated early detection of cardiac anomalies with high accuracy, potentially assisting medical professionals in diagnosis."
-  },
+  
   "supply-chain-management": {
     title: "Supply Chain Management System (Team Project)",
     summary: "Database-driven system for managing inventory, suppliers, and logistics using relational database design.",
