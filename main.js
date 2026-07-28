@@ -42,9 +42,10 @@ const projectsData = {
     tags: ["IoT"],
     overview: "An IoT-enabled shopping trolley that uses RFID and load-cell technology for automatic billing.",
     problem: "Long checkout queues in retail stores allow for inefficiency and cause customer dissatisfaction.",
-    approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without traditional scanning.",
+    approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without tradition[...]",
     technologies: "IoT, RFID, Embedded Systems, Sensors, Microcontrollers",
-    outcome: "Drastically reduced checkout times and improved the overall shopping experience for customers."
+    outcome: "Drastically reduced checkout times and improved the overall shopping experience for customers.",
+    videoUrl: "https://youtu.be/Icqv7mvNjfM?si=loC25Axf_mJ_tI6b"
   },
   "plant-growth-classification": {
     title: "Plant Growth Classification Using Machine Learning (Team Project)",
@@ -133,6 +134,27 @@ function renderProjectDetail(id) {
             <p style="font-size: 1.2rem; color: var(--accent-color); margin-bottom: 1.5rem;">${project.tags[0]}</p>
             ${project.link ? `<a href="${project.link}" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">Open Project ↗</a>` : ''}
         </header>
+
+        ${project.videoUrl ? `
+          <div class="card" style="max-width:900px;margin:0 auto 2rem;">
+            <h3 style="margin-bottom:0.5rem;">Demo Video</h3>
+            <div class="video-wrapper" style="margin-top:1rem;">
+              ${project.videoUrl.includes('youtube') || project.videoUrl.includes('youtu.be') ? `
+                <div style="position:relative;padding-top:56.25%;">
+                  <iframe src="${project.videoUrl.includes('watch?v=') ? project.videoUrl.replace('watch?v=','embed/') : project.videoUrl.replace('youtu.be/','youtube.com/embed/') }"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen></iframe>
+                </div>
+              ` : `
+                <video controls style="width:100%;max-height:500px;">
+                  <source src="${project.videoUrl}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              `}
+            </div>
+          </div>
+        ` : ''}
 
         <div class="detail-grid" style="display: grid; gap: 2rem; max-width: 900px; margin: 0 auto;">
             <div class="card">
