@@ -11,7 +11,15 @@ const projectsData = {
     approach: "Utilized Large Language Models (LLMs) to ingest PDF text, generate embeddings, and perform retrieval-augmented generation (RAG) to answer user queries contextually.",
     technologies: "Python, Large Language Models (LLMs), NLP, PDF Processing",
     outcome: "Significantly reduced reading time and enhanced help comprehension through interactive content querying.",
-    liveUrl: "https://aibookanalyzer-q48y7sj3pyvgcbpc8ug28j.streamlit.app/"
+    liveUrl: "https://aibookanalyzer-q48y7sj3pyvgcbpc8ug28j.streamlit.app/",
+    details: [
+      "Purpose: Ingest PDFs, create embeddings, and provide context-aware summaries, FAQs, and an interactive Q&A grounded in the source text.",
+      "Key features: PDF upload + OCR fallback, chunked text embedding, semantic retrieval (vector DB), and RAG-based responses with source citations (page/chunk).",
+      "Technical highlights: Embeddings (OpenAI/other), vector store (Pinecone/FAISS/Weaviate), LLM prompt templates, and a background job queue to handle long ingestions.",
+      "UX & safeguards: Progress indicators for large files, 'show sources' toggle, and caching/rate-limits to control LLM costs.",
+      "Outcomes & metrics: Faster knowledge extraction, measured latency and token usage, and improved comprehension via sourced answers.",
+      "Next steps: multi-document comparisons, bookmarking/flashcards, improved OCR accuracy, and fine-grained access controls."
+    ]
   },
   
   "mental-health-support": {
@@ -23,7 +31,15 @@ const projectsData = {
     approach: "Implemented sentiment analysis algorithms to assess user inputs (text or voice) and recommend appropriate coping strategies or resources based on the detected emotional state.",
     technologies: "AI, Sentiment Analysis, Mobile/Web Development",
     outcome: "Offered an accessible, private tool for monitoring mental well-being and practicing stress management techniques.",
-    liveUrl: "https://mental-health-app-6zjf.onrender.com"
+    liveUrl: "https://mental-health-app-6zjf.onrender.com",
+    details: [
+      "Purpose: Provide quick, private stress assessments and personalized coping guidance from text or voice entries.",
+      "Key features: Text + voice check-ins, emotion/sentiment classifier, triage for high-risk content, and personalized coping suggestions and exercises.",
+      "Technical highlights: STT (Whisper or equivalent) for voice, transformer-based emotion classifier or hybrid rule-based checks, secure storage, and trend analytics.",
+      "UX & privacy: Simple 1–3 step check-ins, calming UI, explicit consent, easy data export/delete, and helpline escalation for risks.",
+      "Outcomes & metrics: Increased accessibility for preliminary support, tracked engagement and mood trends.",
+      "Next steps: Integrate certified professionals, passive-sensor inputs (consented), and longitudinal personalization."
+    ]
   },
   
   "supply-chain-management": {
@@ -34,7 +50,15 @@ const projectsData = {
     problem: "Inefficient manual tracking of inventory and supplier data leading to errors and delays in the supply chain.",
     approach: "Designed a normalized relational database schema to efficiently track products, orders, and suppliers. Implemented SQL queries for complex reporting and data integrity checks.",
     technologies: "SQL, Relational Database Management Systems (RDBMS), Database Design",
-    outcome: "Streamlined inventory tracking, reduced data redundancy, and improved data integrity for logistics management."
+    outcome: "Streamlined inventory tracking, reduced data redundancy, and improved data integrity for logistics management.",
+    details: [
+      "Purpose: Centralize inventory, suppliers, orders, and logistics using a normalized relational schema and reporting engine.",
+      "Key features: Product/supplier/warehouse tables, inventory movement audit trail, PO workflow with reorder triggers, and dashboards for KPIs.",
+      "Technical highlights: RDBMS (Postgres/MySQL), transactional operations for stock updates, materialized views for heavy reports, and role-based access control.",
+      "Data integrity & performance: Foreign keys, transactions/locking to avoid race conditions, and scheduled report refreshes for analytics.",
+      "Outcomes & metrics: Reduced manual errors, better stock accuracy, and actionable supplier performance data.",
+      "Next steps: Supplier API integrations (EDI), predictive reorder forecasting, and mobile scanning for warehouse staff."
+    ]
   },
   "smart-trolley": {
     title: "Smart Trolley with Automated Billing System (Team Project)",
@@ -45,7 +69,15 @@ const projectsData = {
     approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without tradition[...]",
     technologies: "IoT, RFID, Embedded Systems, Sensors, Microcontrollers",
     outcome: "Drastically reduced checkout times and improved the overall shopping experience for customers.",
-    videoUrl: "https://youtu.be/Icqv7mvNjfM?si=loC25Axf_mJ_tI6b"
+    videoUrl: "https://youtu.be/Icqv7mvNjfM?si=loC25Axf_mJ_tI6b",
+    details: [
+      "Purpose: Use RFID + load cells to auto-detect trolley contents and calculate real-time billing to eliminate checkout queues.",
+      "Key features: RFID SKU reads, weight verification via load cell, edge device aggregation (microcontroller), and user display/mobile integration.",
+      "Technical highlights: Multi-antenna RFID setup, anti-collision handling, load cell smoothing/calibration, and offline buffering with sync.",
+      "Reliability & security: Cross-check read vs weight to detect anomalies, tamper detection, and graceful degradation when connectivity fails.",
+      "Outcomes & metrics: Reduced checkout times and improved shopping flow; engineering lessons on RF reliability and sensor noise.",
+      "Next steps: Add CV for untagged produce, centralized fleet management, and loyalty/notifications on the trolley UI."
+    ]
   },
   "plant-growth-classification": {
     title: "Plant Growth Classification Using Machine Learning (Team Project)",
@@ -55,7 +87,15 @@ const projectsData = {
     problem: "Need for scalable, automated monitoring of crop health and growth stages in precision agriculture.",
     approach: "Collected and labeled an image dataset of plants at various stages; trained a Convolutional Neural Network (CNN) to classify images into specific growth stages.",
     technologies: "Deep Learning, Computer Vision, Python, TensorFlow/PyTorch",
-    outcome: "Enabled automated, non-invasive monitoring for agricultural optimization and yield prediction."
+    outcome: "Enabled automated, non-invasive monitoring for agricultural optimization and yield prediction.",
+    details: [
+      "Purpose: Classify plant growth stages from images to enable automated crop monitoring and management decisions.",
+      "Key features: Image collection + labeling pipeline, augmentation, CNN-based classifier (transfer learning), and per-image confidence/explainability (Grad-CAM).",
+      "Technical highlights: Models (ResNet/EfficientNet/MobileNet), training with class weighting for imbalance, export to TFLite/ONNX for edge, and monitoring for drift.",
+      "Evaluation & deployment: Confusion matrix & per-class metrics, field trials for real-world validation, and quantization for low-latency edge inference.",
+      "Outcomes & metrics: Non-invasive growth monitoring and improved intervention timing; challenges included dataset variability and seasonal shift.",
+      "Next steps: Multi-sensor fusion (NDVI), temporal models for progression, and active learning loop to collect corrective labels."
+    ]
   }
 };
 
@@ -187,6 +227,15 @@ function renderProjectDetail(id) {
                 <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">Live Project</h3>
                 <p style="margin-bottom: 1.5rem;">Check out the live deployment of this project.</p>
                 <a href="${project.liveUrl}" target="_blank" class="btn btn-primary">View Live App 🚀</a>
+            </div>
+            ` : ''}
+
+            ${project.details && project.details.length ? `
+            <div class="card">
+                <h3>Detailed Highlights</h3>
+                <ul style="margin-top:0.5rem; padding-left:1.25rem;">
+                  ${project.details.map(point => `<li style="margin-bottom:0.5rem;">${point}</li>`).join('')}
+                </ul>
             </div>
             ` : ''}
         </div>
