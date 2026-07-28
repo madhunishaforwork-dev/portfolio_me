@@ -12,10 +12,12 @@ const projectsData = {
     technologies: "Python, Large Language Models (LLMs), NLP, PDF Processing",
     outcome: "Significantly reduced reading time and enhanced help comprehension through interactive content querying.",
     liveUrl: "https://aibookanalyzer-q48y7sj3pyvgcbpc8ug28j.streamlit.app/",
-    details: [
-     Description:
-"AI Book Analyzer is an AI-powered application designed to help users understand and interact with large PDF books and documents efficiently. The system processes uploaded PDF files, extracts their textual content, and uses Natural Language Processing and AI techniques to generate concise summaries, answer user questions, and create frequently asked questions from the document. Instead of manually searching through lengthy books, users can ask questions related to the uploaded content and receive relevant responses. The project demonstrates practical applications of document processing, NLP, information retrieval, and generative AI."
-"Key Features: PDF upload and text extraction, automatic summarization, document-based question answering, FAQ generation, and interactive Q&A."
+    description: "AI Book Analyzer is an AI-powered application designed to help users understand and interact with large PDF books and documents efficiently. The system processes uploaded PDF files, extracts their textual content, and uses Natural Language Processing and AI techniques to generate concise summaries, answer user questions, and create frequently asked questions from the document. Instead of manually searching through lengthy books, users can ask questions related to the uploaded content and receive relevant responses. The project demonstrates practical applications of document processing, NLP, information retrieval, and generative AI.",
+    keyFeatures: [
+      "PDF upload and text extraction (OCR fallback)",
+      "Automatic summarization and FAQ generation",
+      "Document-based question answering (RAG/semantic retrieval)",
+      "Source citations (page/chunk) in responses"
     ]
   },
   
@@ -29,10 +31,12 @@ const projectsData = {
     technologies: "AI, Sentiment Analysis, Mobile/Web Development",
     outcome: "Offered an accessible, private tool for monitoring mental well-being and practicing stress management techniques.",
     liveUrl: "https://mental-health-app-6zjf.onrender.com",
-    details: [
-      "Description:The Mental Health Support Application is an AI-assisted platform designed to provide basic stress assessment and personalized well-being guidance. The application collects user responses through questionnaires or assessments and analyzes them to estimate stress or well-being levels. Based on the assessment, the system provides personalized recommendations such as relaxation activities, lifestyle suggestions, or general wellness guidance. The project demonstrates how AI and data-driven techniques can be integrated into a user-friendly application to provide personalized support, while functioning as a supportive tool rather than a clinical diagnostic system."
-
-"Key Features: Stress assessment, user-response analysis, personalized recommendations, wellness guidance, and an interactive interface."
+    description: "The Mental Health Support Application is an AI-assisted platform designed to provide basic stress assessment and personalized well-being guidance. The application collects user responses through questionnaires or assessments and analyzes them to estimate stress or well-being levels. Based on the assessment, the system provides personalized recommendations such as relaxation activities, lifestyle suggestions, or general wellness guidance. The project demonstrates how AI and data-driven techniques can be integrated into a user-friendly application to provide personalized support, while functioning as a supportive tool rather than a clinical diagnostic system.",
+    keyFeatures: [
+      "Text and voice check-ins (STT integration possible: Whisper/etc.)",
+      "Emotion / sentiment analysis and personalized recommendations",
+      "Triage/escalation for high-risk responses",
+      "Privacy controls, easy data export/delete, and trend analytics"
     ]
   },
   
@@ -45,10 +49,12 @@ const projectsData = {
     approach: "Designed a normalized relational database schema to efficiently track products, orders, and suppliers. Implemented SQL queries for complex reporting and data integrity checks.",
     technologies: "SQL, Relational Database Management Systems (RDBMS), Database Design",
     outcome: "Streamlined inventory tracking, reduced data redundancy, and improved data integrity for logistics management.",
-    details: [
-      "Description:The Supply Chain Management System is a database-driven application developed to manage important supply-chain operations such as inventory, suppliers, products, orders, and logistics. The system uses a relational database structure to store and organize data efficiently and establishes relationships between different entities using primary and foreign keys. It supports operations such as adding and updating product information, maintaining supplier details, tracking inventory levels, and managing order-related information. The project demonstrates practical knowledge of relational database design, SQL queries, CRUD operations, normalization, and data management."
-
-"Key Features: Inventory management, supplier management, product and order tracking, relational database design, CRUD operations, and SQL-based data retrieval."
+    description: "The Supply Chain Management System is a database-driven application developed to manage important supply-chain operations such as inventory, suppliers, products, orders, and logistics. The system uses a relational database structure to store and organize data efficiently and establishes relationships between different entities using primary and foreign keys. It supports operations such as adding and updating product information, maintaining supplier details, tracking inventory levels, and managing order-related information. The project demonstrates practical knowledge of relational database design, SQL queries, CRUD operations, normalization, and data management.",
+    keyFeatures: [
+      "Inventory management, supplier and product tracking",
+      "Order and purchase-order workflows with reorder triggers",
+      "Audit trails for inventory movement and materialized views for heavy reports",
+      "Role-based access control and transactional safety"
     ]
   },
   "smart-trolley": {
@@ -57,14 +63,16 @@ const projectsData = {
     tags: ["IoT"],
     overview: "An IoT-enabled shopping trolley that uses RFID and load-cell technology for automatic billing.",
     problem: "Long checkout queues in retail stores allow for inefficiency and cause customer dissatisfaction.",
-    approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without tradition[...]",
+    approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without traditional queues.",
     technologies: "IoT, RFID, Embedded Systems, Sensors, Microcontrollers",
     outcome: "Drastically reduced checkout times and improved the overall shopping experience for customers.",
     videoUrl: "https://youtu.be/Icqv7mvNjfM?si=loC25Axf_mJ_tI6b",
-    details: [
-      "The Smart Trolley with Automated Billing System is an IoT-based shopping solution designed to automate product identification and billing inside retail stores. Products are identified using RFID technology, while a load cell measures the weight of items placed inside the trolley and can be used to validate product addition. A microcontroller processes RFID and sensor information, maintains the shopping cart, and calculates the total bill. The system can also integrate components such as an LCD for displaying product and billing information, a thermal printer for generating bills, GSM for communication, and Wi-Fi connectivity for transferring information to an application or server. The project aims to reduce manual billing effort and improve the shopping experience."
-
-"Key Features: RFID-based product identification, load-cell weight verification, automatic bill calculation, cart management, display interface, and IoT connectivity."
+    description: "The Smart Trolley is an IoT-based shopping solution designed to automate product identification and billing inside retail stores. Products are identified using RFID technology, while a load cell measures the weight of items placed inside the trolley and can be used to validate product addition. A microcontroller processes RFID and sensor information, maintains the shopping cart, and calculates the total bill. The system can also integrate components such as an LCD for displaying product and billing information, a thermal printer for generating bills, GSM for communication, and Wi-Fi connectivity for transferring information to an application or server. The project aims to reduce manual billing effort and improve the shopping experience.",
+    keyFeatures: [
+      "RFID-based product identification with anti-collision handling",
+      "Load-cell weight verification for fraud detection",
+      "Edge device aggregation (microcontroller) with display and connectivity",
+      "Automatic bill calculation and offline buffering with sync"
     ]
   },
   "plant-growth-classification": {
@@ -76,10 +84,12 @@ const projectsData = {
     approach: "Collected and labeled an image dataset of plants at various stages; trained a Convolutional Neural Network (CNN) to classify images into specific growth stages.",
     technologies: "Deep Learning, Computer Vision, Python, TensorFlow/PyTorch",
     outcome: "Enabled automated, non-invasive monitoring for agricultural optimization and yield prediction.",
-    details: [
-      "Description:The Plant Growth Classification project uses machine learning and image-processing techniques to identify the growth stage of a plant from images. Plant images are collected and preprocessed to create suitable inputs for the classification model. Relevant visual characteristics are then learned or extracted to distinguish between different stages of plant development. A machine learning model is trained using labeled images and evaluated using appropriate classification metrics. The project demonstrates the application of machine learning and computer vision in agriculture, where automated plant monitoring can help track plant development and support data-driven agricultural decisions."
-
-"Key Features: Image preprocessing, plant growth-stage classification, ML model training, model evaluation, and agricultural monitoring."
+    description: "This project uses machine learning and image-processing techniques to identify the growth stage of a plant from images. Plant images are collected and preprocessed to create suitable inputs for the classification model. Relevant visual characteristics are then learned or extracted to distinguish between different stages of plant development. A machine learning model is trained using labeled images and evaluated using appropriate classification metrics. The project demonstrates the application of machine learning and computer vision in agriculture, where automated plant monitoring can help track plant development and support data-driven agricultural decisions.",
+    keyFeatures: [
+      "Image preprocessing and augmentation pipeline",
+      "Plant growth-stage classification using transfer learning (ResNet/EfficientNet/MobileNet)",
+      "Model evaluation (confusion matrix, per-class metrics) and explainability (Grad-CAM)",
+      "Edge export (TFLite/ONNX) and monitoring for model drift"
     ]
   }
 };
@@ -187,6 +197,13 @@ function renderProjectDetail(id) {
                 <p>${project.overview}</p>
             </div>
 
+            ${project.description ? `
+            <div class="card">
+                <h3>Description</h3>
+                <p>${project.description}</p>
+            </div>
+            ` : ''}
+
             <div class="card">
                 <h3>Problem Statement</h3>
                 <p>${project.problem}</p>
@@ -215,11 +232,11 @@ function renderProjectDetail(id) {
             </div>
             ` : ''}
 
-            ${project.details && project.details.length ? `
+            ${(project.keyFeatures && project.keyFeatures.length) || (project.details && project.details.length) ? `
             <div class="card">
                 <h3>Detailed Highlights</h3>
                 <ul style="margin-top:0.5rem; padding-left:1.25rem;">
-                  ${project.details.map(point => `<li style="margin-bottom:0.5rem;">${point}</li>`).join('')}
+                  ${(project.keyFeatures || project.details).map(point => `<li style="margin-bottom:0.5rem;">${point}</li>`).join('')}
                 </ul>
             </div>
             ` : ''}
