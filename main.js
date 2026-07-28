@@ -13,12 +13,9 @@ const projectsData = {
     outcome: "Significantly reduced reading time and enhanced help comprehension through interactive content querying.",
     liveUrl: "https://aibookanalyzer-q48y7sj3pyvgcbpc8ug28j.streamlit.app/",
     details: [
-      "Purpose: Ingest PDFs, create embeddings, and provide context-aware summaries, FAQs, and an interactive Q&A grounded in the source text.",
-      "Key features: PDF upload + OCR fallback, chunked text embedding, semantic retrieval (vector DB), and RAG-based responses with source citations (page/chunk).",
-      "Technical highlights: Embeddings (OpenAI/other), vector store (Pinecone/FAISS/Weaviate), LLM prompt templates, and a background job queue to handle long ingestions.",
-      "UX & safeguards: Progress indicators for large files, 'show sources' toggle, and caching/rate-limits to control LLM costs.",
-      "Outcomes & metrics: Faster knowledge extraction, measured latency and token usage, and improved comprehension via sourced answers.",
-      "Next steps: multi-document comparisons, bookmarking/flashcards, improved OCR accuracy, and fine-grained access controls."
+     Description:
+"AI Book Analyzer is an AI-powered application designed to help users understand and interact with large PDF books and documents efficiently. The system processes uploaded PDF files, extracts their textual content, and uses Natural Language Processing and AI techniques to generate concise summaries, answer user questions, and create frequently asked questions from the document. Instead of manually searching through lengthy books, users can ask questions related to the uploaded content and receive relevant responses. The project demonstrates practical applications of document processing, NLP, information retrieval, and generative AI."
+"Key Features: PDF upload and text extraction, automatic summarization, document-based question answering, FAQ generation, and interactive Q&A."
     ]
   },
   
@@ -33,12 +30,9 @@ const projectsData = {
     outcome: "Offered an accessible, private tool for monitoring mental well-being and practicing stress management techniques.",
     liveUrl: "https://mental-health-app-6zjf.onrender.com",
     details: [
-      "Purpose: Provide quick, private stress assessments and personalized coping guidance from text or voice entries.",
-      "Key features: Text + voice check-ins, emotion/sentiment classifier, triage for high-risk content, and personalized coping suggestions and exercises.",
-      "Technical highlights: STT (Whisper or equivalent) for voice, transformer-based emotion classifier or hybrid rule-based checks, secure storage, and trend analytics.",
-      "UX & privacy: Simple 1–3 step check-ins, calming UI, explicit consent, easy data export/delete, and helpline escalation for risks.",
-      "Outcomes & metrics: Increased accessibility for preliminary support, tracked engagement and mood trends.",
-      "Next steps: Integrate certified professionals, passive-sensor inputs (consented), and longitudinal personalization."
+      "Description:The Mental Health Support Application is an AI-assisted platform designed to provide basic stress assessment and personalized well-being guidance. The application collects user responses through questionnaires or assessments and analyzes them to estimate stress or well-being levels. Based on the assessment, the system provides personalized recommendations such as relaxation activities, lifestyle suggestions, or general wellness guidance. The project demonstrates how AI and data-driven techniques can be integrated into a user-friendly application to provide personalized support, while functioning as a supportive tool rather than a clinical diagnostic system."
+
+"Key Features: Stress assessment, user-response analysis, personalized recommendations, wellness guidance, and an interactive interface."
     ]
   },
   
@@ -52,12 +46,9 @@ const projectsData = {
     technologies: "SQL, Relational Database Management Systems (RDBMS), Database Design",
     outcome: "Streamlined inventory tracking, reduced data redundancy, and improved data integrity for logistics management.",
     details: [
-      "Purpose: Centralize inventory, suppliers, orders, and logistics using a normalized relational schema and reporting engine.",
-      "Key features: Product/supplier/warehouse tables, inventory movement audit trail, PO workflow with reorder triggers, and dashboards for KPIs.",
-      "Technical highlights: RDBMS (Postgres/MySQL), transactional operations for stock updates, materialized views for heavy reports, and role-based access control.",
-      "Data integrity & performance: Foreign keys, transactions/locking to avoid race conditions, and scheduled report refreshes for analytics.",
-      "Outcomes & metrics: Reduced manual errors, better stock accuracy, and actionable supplier performance data.",
-      "Next steps: Supplier API integrations (EDI), predictive reorder forecasting, and mobile scanning for warehouse staff."
+      "Description:The Supply Chain Management System is a database-driven application developed to manage important supply-chain operations such as inventory, suppliers, products, orders, and logistics. The system uses a relational database structure to store and organize data efficiently and establishes relationships between different entities using primary and foreign keys. It supports operations such as adding and updating product information, maintaining supplier details, tracking inventory levels, and managing order-related information. The project demonstrates practical knowledge of relational database design, SQL queries, CRUD operations, normalization, and data management."
+
+"Key Features: Inventory management, supplier management, product and order tracking, relational database design, CRUD operations, and SQL-based data retrieval."
     ]
   },
   "smart-trolley": {
@@ -71,12 +62,9 @@ const projectsData = {
     outcome: "Drastically reduced checkout times and improved the overall shopping experience for customers.",
     videoUrl: "https://youtu.be/Icqv7mvNjfM?si=loC25Axf_mJ_tI6b",
     details: [
-      "Purpose: Use RFID + load cells to auto-detect trolley contents and calculate real-time billing to eliminate checkout queues.",
-      "Key features: RFID SKU reads, weight verification via load cell, edge device aggregation (microcontroller), and user display/mobile integration.",
-      "Technical highlights: Multi-antenna RFID setup, anti-collision handling, load cell smoothing/calibration, and offline buffering with sync.",
-      "Reliability & security: Cross-check read vs weight to detect anomalies, tamper detection, and graceful degradation when connectivity fails.",
-      "Outcomes & metrics: Reduced checkout times and improved shopping flow; engineering lessons on RF reliability and sensor noise.",
-      "Next steps: Add CV for untagged produce, centralized fleet management, and loyalty/notifications on the trolley UI."
+      "The Smart Trolley with Automated Billing System is an IoT-based shopping solution designed to automate product identification and billing inside retail stores. Products are identified using RFID technology, while a load cell measures the weight of items placed inside the trolley and can be used to validate product addition. A microcontroller processes RFID and sensor information, maintains the shopping cart, and calculates the total bill. The system can also integrate components such as an LCD for displaying product and billing information, a thermal printer for generating bills, GSM for communication, and Wi-Fi connectivity for transferring information to an application or server. The project aims to reduce manual billing effort and improve the shopping experience."
+
+"Key Features: RFID-based product identification, load-cell weight verification, automatic bill calculation, cart management, display interface, and IoT connectivity."
     ]
   },
   "plant-growth-classification": {
@@ -89,12 +77,9 @@ const projectsData = {
     technologies: "Deep Learning, Computer Vision, Python, TensorFlow/PyTorch",
     outcome: "Enabled automated, non-invasive monitoring for agricultural optimization and yield prediction.",
     details: [
-      "Purpose: Classify plant growth stages from images to enable automated crop monitoring and management decisions.",
-      "Key features: Image collection + labeling pipeline, augmentation, CNN-based classifier (transfer learning), and per-image confidence/explainability (Grad-CAM).",
-      "Technical highlights: Models (ResNet/EfficientNet/MobileNet), training with class weighting for imbalance, export to TFLite/ONNX for edge, and monitoring for drift.",
-      "Evaluation & deployment: Confusion matrix & per-class metrics, field trials for real-world validation, and quantization for low-latency edge inference.",
-      "Outcomes & metrics: Non-invasive growth monitoring and improved intervention timing; challenges included dataset variability and seasonal shift.",
-      "Next steps: Multi-sensor fusion (NDVI), temporal models for progression, and active learning loop to collect corrective labels."
+      "Description:The Plant Growth Classification project uses machine learning and image-processing techniques to identify the growth stage of a plant from images. Plant images are collected and preprocessed to create suitable inputs for the classification model. Relevant visual characteristics are then learned or extracted to distinguish between different stages of plant development. A machine learning model is trained using labeled images and evaluated using appropriate classification metrics. The project demonstrates the application of machine learning and computer vision in agriculture, where automated plant monitoring can help track plant development and support data-driven agricultural decisions."
+
+"Key Features: Image preprocessing, plant growth-stage classification, ML model training, model evaluation, and agricultural monitoring."
     ]
   }
 };
