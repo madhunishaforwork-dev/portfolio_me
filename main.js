@@ -12,7 +12,7 @@ const projectsData = {
     technologies: "Python, Large Language Models (LLMs), NLP, PDF Processing",
     outcome: "Significantly reduced reading time and enhanced help comprehension through interactive content querying.",
     liveUrl: "https://aibookanalyzer-q48y7sj3pyvgcbpc8ug28j.streamlit.app/",
-    description: "AI Book Analyzer is an AI-powered application designed to help users understand and interact with large PDF books and documents efficiently. The system processes uploaded PDF files, extracts their textual content, and uses Natural Language Processing and AI techniques to generate concise summaries, answer user questions, and create frequently asked questions from the document. Instead of manually searching through lengthy books, users can ask questions related to the uploaded content and receive relevant responses. The project demonstrates practical applications of document processing, NLP, information retrieval, and generative AI.",
+    description: "AI Book Analyzer is an AI-powered application designed to help users understand and interact with large PDF books and documents efficiently. The system processes uploaded PDF fil[...]",
     keyFeatures: [
       "PDF upload and text extraction (OCR fallback)",
       "Automatic summarization and FAQ generation",
@@ -31,7 +31,7 @@ const projectsData = {
     technologies: "AI, Sentiment Analysis, Mobile/Web Development",
     outcome: "Offered an accessible, private tool for monitoring mental well-being and practicing stress management techniques.",
     liveUrl: "https://mental-health-app-6zjf.onrender.com",
-    description: "The Mental Health Support Application is an AI-assisted platform designed to provide basic stress assessment and personalized well-being guidance. The application collects user responses through questionnaires or assessments and analyzes them to estimate stress or well-being levels. Based on the assessment, the system provides personalized recommendations such as relaxation activities, lifestyle suggestions, or general wellness guidance. The project demonstrates how AI and data-driven techniques can be integrated into a user-friendly application to provide personalized support, while functioning as a supportive tool rather than a clinical diagnostic system.",
+    description: "The Mental Health Support Application is an AI-assisted platform designed to provide basic stress assessment and personalized well-being guidance. The application collects user r[...]",
     keyFeatures: [
       "Text and voice check-ins (STT integration possible: Whisper/etc.)",
       "Emotion / sentiment analysis and personalized recommendations",
@@ -49,7 +49,7 @@ const projectsData = {
     approach: "Designed a normalized relational database schema to efficiently track products, orders, and suppliers. Implemented SQL queries for complex reporting and data integrity checks.",
     technologies: "SQL, Relational Database Management Systems (RDBMS), Database Design",
     outcome: "Streamlined inventory tracking, reduced data redundancy, and improved data integrity for logistics management.",
-    description: "The Supply Chain Management System is a database-driven application developed to manage important supply-chain operations such as inventory, suppliers, products, orders, and logistics. The system uses a relational database structure to store and organize data efficiently and establishes relationships between different entities using primary and foreign keys. It supports operations such as adding and updating product information, maintaining supplier details, tracking inventory levels, and managing order-related information. The project demonstrates practical knowledge of relational database design, SQL queries, CRUD operations, normalization, and data management.",
+    description: "The Supply Chain Management System is a database-driven application developed to manage important supply-chain operations such as inventory, suppliers, products, orders, and logi[...]",
     keyFeatures: [
       "Inventory management, supplier and product tracking",
       "Order and purchase-order workflows with reorder triggers",
@@ -63,11 +63,11 @@ const projectsData = {
     tags: ["IoT"],
     overview: "An IoT-enabled shopping trolley that uses RFID and load-cell technology for automatic billing.",
     problem: "Long checkout queues in retail stores allow for inefficiency and cause customer dissatisfaction.",
-    approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without traditional queues.",
+    approach: "Integrated RFID readers to identify items placed in the trolley and load cells to verify weight/presence, calculating the total bill in real-time and enabling checkout without tradi[...]",
     technologies: "IoT, RFID, Embedded Systems, Sensors, Microcontrollers",
     outcome: "Drastically reduced checkout times and improved the overall shopping experience for customers.",
     videoUrl: "https://youtu.be/Icqv7mvNjfM?si=loC25Axf_mJ_tI6b",
-    description: "The Smart Trolley is an IoT-based shopping solution designed to automate product identification and billing inside retail stores. Products are identified using RFID technology, while a load cell measures the weight of items placed inside the trolley and can be used to validate product addition. A microcontroller processes RFID and sensor information, maintains the shopping cart, and calculates the total bill. The system can also integrate components such as an LCD for displaying product and billing information, a thermal printer for generating bills, GSM for communication, and Wi-Fi connectivity for transferring information to an application or server. The project aims to reduce manual billing effort and improve the shopping experience.",
+    description: "The Smart Trolley is an IoT-based shopping solution designed to automate product identification and billing inside retail stores. Products are identified using RFID technology, w[...]",
     keyFeatures: [
       "RFID-based product identification with anti-collision handling",
       "Load-cell weight verification for fraud detection",
@@ -84,7 +84,8 @@ const projectsData = {
     approach: "Collected and labeled an image dataset of plants at various stages; trained a Convolutional Neural Network (CNN) to classify images into specific growth stages.",
     technologies: "Deep Learning, Computer Vision, Python, TensorFlow/PyTorch",
     outcome: "Enabled automated, non-invasive monitoring for agricultural optimization and yield prediction.",
-    description: "This project uses machine learning and image-processing techniques to identify the growth stage of a plant from images. Plant images are collected and preprocessed to create suitable inputs for the classification model. Relevant visual characteristics are then learned or extracted to distinguish between different stages of plant development. A machine learning model is trained using labeled images and evaluated using appropriate classification metrics. The project demonstrates the application of machine learning and computer vision in agriculture, where automated plant monitoring can help track plant development and support data-driven agricultural decisions.",
+    liveUrl: "https://machinelearning-project1.streamlit.app/",
+    description: "This project uses machine learning and image-processing techniques to identify the growth stage of a plant from images. Plant images are collected and preprocessed to create suit[...]",
     keyFeatures: [
       "Image preprocessing and augmentation pipeline",
       "Plant growth-stage classification using transfer learning (ResNet/EfficientNet/MobileNet)",
